@@ -21,11 +21,6 @@ export default {
         paper: '#FFFFFF',
         mist: '#F5F5F3',
         line: '#E5E5E5',
-        accent: {
-          DEFAULT: '#C8963E',
-          light: '#D9AA55',
-          dark: '#A87A2E',
-        },
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
@@ -44,8 +39,8 @@ export default {
         wide3: '0.2em',
       },
       animation: {
-        'marquee-left': 'marquee-left 40s linear infinite',
-        'marquee-right': 'marquee-right 40s linear infinite',
+        'marquee-left': 'marquee-left 50s linear infinite',
+        'marquee-right': 'marquee-right 50s linear infinite',
         'fade-in': 'fade-in 0.6s ease-out forwards',
         'scroll-indicator': 'scroll-indicator 2s ease-in-out infinite',
       },

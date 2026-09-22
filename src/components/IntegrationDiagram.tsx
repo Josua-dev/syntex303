@@ -18,7 +18,7 @@ export function IntegrationDiagram() {
           }
           return prev + 1;
         });
-      }, 200);
+      }, 180);
       return () => clearInterval(interval);
     }
   }, [inView]);
@@ -33,29 +33,40 @@ export function IntegrationDiagram() {
           {/* Left: heading */}
           <div className="lg:col-span-5">
             <Reveal>
-              <span className="font-mono text-xs tracking-wide3 uppercase text-ink-500">
+              <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-500">
                 / 03 — Systems Integration
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,4rem)] font-medium leading-[1.0] tracking-ultra-tight text-white">
-                Systems that work
+              <h2 className="mt-6 font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-white">
+                Systems
+                <br />
+                that work
                 <br />
                 <span className="text-ink-500">as one.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-8 max-w-md text-lg leading-[1.6] text-ink-400">
-                Syntex does not simply sell technology. Syntex integrates
-                technology into complete working systems — each layer connected,
-                each layer reinforcing the next.
+              <p className="mt-10 max-w-md text-lg leading-[1.6] text-ink-400">
+                Syntex does not simply sell technology. We integrate technology
+                into complete working systems — each layer connected, each
+                layer reinforcing the next.
               </p>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <div className="mt-10 flex items-center gap-4">
+                <div className="h-px flex-1 bg-ink-700" />
+                <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-500">
+                  6 Integrated Layers
+                </span>
+              </div>
             </Reveal>
           </div>
 
-          {/* Right: diagram */}
+          {/* Right: schematic diagram */}
           <div ref={ref} className="lg:col-span-7">
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col">
               {integrationLayers.map((layer, i) => {
                 const isVisible = i < visibleCount;
                 const isLast = i === integrationLayers.length - 1;
@@ -64,48 +75,52 @@ export function IntegrationDiagram() {
                     key={layer.label}
                     className="group relative"
                     style={{
-                      opacity: isVisible ? 1 : 0.15,
-                      transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                      transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
+                      opacity: isVisible ? 1 : 0.1,
+                      transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                      transition: 'all 0.7s cubic-bezier(0.22, 1, 0.36, 1)',
                     }}
                   >
-                    {/* Connector line */}
+                    {/* Connector — vertical line between layers */}
                     {!isLast && (
-                      <div className="absolute left-6 top-full h-px w-px">
-                        <div
-                          className="h-16 w-px bg-gradient-to-b from-ink-600 to-ink-800"
-                          style={{
-                            opacity: isVisible && i < visibleCount - 1 ? 1 : 0.3,
-                            transition: 'opacity 0.6s',
-                          }}
-                        />
-                      </div>
+                      <div
+                        className="absolute left-[27px] top-[60px] w-px"
+                        style={{
+                          height: '32px',
+                          background: isVisible && i < visibleCount - 1
+                            ? 'linear-gradient(to bottom, #4a4a4a, #2e2e2e)'
+                            : '#1c1c1c',
+                          transition: 'background 0.6s',
+                        }}
+                      />
                     )}
 
-                    <div className="flex items-center gap-6 py-5 transition-all duration-300 hover:pl-4">
-                      {/* Node */}
+                    <div className="flex items-center gap-6 py-4 transition-all duration-300 group-hover:translate-x-2">
+                      {/* Schematic node */}
                       <div
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-500 ${
-                          isVisible
-                            ? 'border-white bg-ink-800'
-                            : 'border-ink-700 bg-ink-900'
-                        }`}
+                        className="flex h-14 w-14 shrink-0 items-center justify-center border transition-all duration-500"
+                        style={{
+                          borderColor: isVisible ? '#4a4a4a' : '#1c1c1c',
+                          background: isVisible ? '#1c1c1c' : '#0a0a0a',
+                        }}
                       >
-                        <div
-                          className={`h-2 w-2 rounded-full transition-colors duration-500 ${
-                            isVisible ? 'bg-white' : 'bg-ink-600'
-                          }`}
-                        />
+                        <span
+                          className="font-mono text-[11px] tracking-wide2 transition-colors duration-500"
+                          style={{
+                            color: isVisible ? '#ffffff' : '#4a4a4a',
+                          }}
+                        >
+                          {layer.code}
+                        </span>
                       </div>
 
                       {/* Content */}
-                      <div className="flex flex-1 flex-col gap-1 border-b border-ink-800 pb-5">
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-display text-2xl font-medium tracking-tight text-white lg:text-3xl">
+                      <div className="flex flex-1 flex-col gap-1 border-b border-ink-800 pb-4">
+                        <div className="flex items-baseline justify-between">
+                          <h3 className="font-display text-xl font-medium tracking-tight text-white lg:text-2xl">
                             {layer.label}
                           </h3>
-                          <span className="font-mono text-xs text-ink-600">
-                            0{i + 1}
+                          <span className="font-mono text-[11px] text-ink-600">
+                            L0{i + 1}
                           </span>
                         </div>
                         <p className="text-sm text-ink-500">
@@ -116,6 +131,25 @@ export function IntegrationDiagram() {
                   </div>
                 );
               })}
+
+              {/* Base bar */}
+              <div
+                className="mt-2 flex h-3 w-full items-center"
+                style={{
+                  background: visibleCount >= integrationLayers.length
+                    ? '#ffffff'
+                    : '#1c1c1c',
+                  transition: 'background 0.8s',
+                }}
+              />
+              <div className="mt-3 flex items-center justify-between">
+                <span className="font-mono text-[10px] tracking-wide3 uppercase text-ink-600">
+                  Integrated Stack
+                </span>
+                <span className="font-mono text-[10px] tracking-wide3 uppercase text-ink-600">
+                  SYNTEX / v2.0
+                </span>
+              </div>
             </div>
           </div>
         </div>

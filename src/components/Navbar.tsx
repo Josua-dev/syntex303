@@ -43,7 +43,7 @@ export function Navbar() {
             ? 'bg-paper/95 backdrop-blur-md border-b border-line'
             : 'bg-transparent'
         }`}
-        style={{ height: scrolled ? 64 : 88 }}
+        style={{ height: scrolled ? 60 : 80 }}
       >
         <div className="mx-auto flex h-full max-w-[1600px] items-center justify-between px-6 lg:px-10">
           <a
@@ -53,16 +53,16 @@ export function Navbar() {
           >
             <SyntexLogo
               variant="dark"
-              className={`transition-all duration-500 ${scrolled ? 'h-9' : 'h-11'}`}
+              className={`transition-all duration-500 ${scrolled ? 'h-8' : 'h-10'}`}
             />
           </a>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-7 lg:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-[13px] font-medium tracking-wide2 uppercase transition-colors duration-300 ${
+                className={`text-[12px] font-medium tracking-wide2 uppercase transition-colors duration-300 ${
                   activeSection === item.href.slice(1)
                     ? 'text-ink-900'
                     : 'text-ink-500 hover:text-ink-900'
@@ -76,7 +76,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="hidden items-center gap-2 text-[13px] font-medium tracking-wide2 uppercase text-ink-900 transition-colors hover:text-ink-500 lg:flex"
+              className="hidden items-center gap-2 text-[12px] font-medium tracking-wide2 uppercase text-ink-900 transition-colors hover:text-ink-500 lg:flex"
             >
               Contact
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -102,7 +102,7 @@ export function Navbar() {
             className="fixed inset-0 z-[60] bg-ink-900 lg:hidden"
           >
             <div className="flex h-full flex-col">
-              <div className="flex items-center justify-between px-6 py-6">
+              <div className="flex items-center justify-between px-6 py-5">
                 <SyntexLogo variant="light" className="h-8" />
                 <button
                   onClick={() => setMenuOpen(false)}
@@ -113,7 +113,7 @@ export function Navbar() {
                 </button>
               </div>
 
-              <nav className="flex flex-1 flex-col justify-center gap-2 px-6">
+              <nav className="flex flex-1 flex-col justify-center gap-1 px-6">
                 {navItems.map((item, i) => (
                   <motion.a
                     key={item.href}
@@ -142,7 +142,7 @@ export function Navbar() {
               </nav>
 
               <div className="px-6 py-8 text-sm text-ink-400">
-                <p className="font-mono text-xs tracking-wide2 uppercase text-ink-500">
+                <p className="font-mono text-[11px] tracking-wide2 uppercase text-ink-500">
                   Windhoek, Namibia
                 </p>
                 <p className="mt-2 text-ink-400">Synergy to Excel</p>

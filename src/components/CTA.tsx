@@ -10,13 +10,13 @@ export function CTA() {
       <div className="mx-auto max-w-[1600px] px-6 py-32 lg:px-10 lg:py-48">
         <div className="flex flex-col items-start gap-12">
           <Reveal>
-            <span className="font-mono text-xs tracking-wide3 uppercase text-ink-500">
+            <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-500">
               / 11 — Contact
             </span>
           </Reveal>
 
           <StaggerText>
-            <h2 className="font-display text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.9] tracking-ultra-tight text-white">
+            <h2 className="font-display text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.88] tracking-ultra-tight text-white">
               Let's engineer
               <br />
               <span className="text-ink-500">what's next.</span>

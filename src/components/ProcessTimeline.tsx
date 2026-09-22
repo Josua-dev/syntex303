@@ -22,17 +22,17 @@ export function ProcessTimeline() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Reveal>
-              <span className="font-mono text-xs tracking-wide3 uppercase text-ink-400">
+              <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-400">
                 / 04 — Engineering Process
               </span>
             </Reveal>
           </div>
           <div className="lg:col-span-8">
             <Reveal delay={0.1}>
-              <h2 className="font-display text-[clamp(2rem,4.5vw,4rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-900">
+              <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900">
                 From requirement
                 <br />
-                <span className="text-ink-400">to real system.</span>
+                <span className="text-ink-300">to real system.</span>
               </h2>
             </Reveal>
           </div>
@@ -43,12 +43,12 @@ export function ProcessTimeline() {
           ref={containerRef}
           className="mt-20 overflow-hidden lg:overflow-visible"
         >
-          {/* Progress line - desktop */}
+          {/* Desktop timeline */}
           <div className="relative hidden lg:block">
-            <div className="absolute left-0 top-[60px] h-px w-full bg-line" />
+            <div className="absolute left-0 top-[28px] h-px w-full bg-line" />
             <motion.div
               style={{ scaleX: lineScale }}
-              className="absolute left-0 top-[60px] h-px w-full origin-left bg-ink-900"
+              className="absolute left-0 top-[28px] h-px w-full origin-left bg-ink-900"
             />
 
             <div className="grid grid-cols-5 gap-6">
@@ -58,17 +58,17 @@ export function ProcessTimeline() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: i * 0.12, duration: 0.6 }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
                   className="flex flex-col gap-6"
                 >
-                  {/* Number circle */}
-                  <div className="relative flex items-center">
-                    <div className="flex h-30 w-30 items-center justify-center">
+                  {/* Number + dot */}
+                  <div className="relative flex items-center gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center bg-mist">
                       <span className="font-mono text-sm text-ink-900">
                         {step.number}
                       </span>
                     </div>
-                    <div className="absolute left-[60px] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-ink-900 bg-paper" />
+                    <div className="absolute left-[52px] top-1/2 h-2 w-2 -translate-y-1/2 rounded-full border border-ink-900 bg-mist" />
                   </div>
 
                   {/* Content */}
@@ -100,9 +100,9 @@ export function ProcessTimeline() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="relative flex gap-6 pl-0"
+                  className="relative flex gap-6"
                 >
-                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-ink-900 bg-paper">
+                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center border border-ink-900 bg-mist">
                     <span className="font-mono text-[10px] text-ink-900">
                       {step.number}
                     </span>

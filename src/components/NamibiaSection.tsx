@@ -9,7 +9,8 @@ export function NamibiaSection() {
     offset: ['start end', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['-10%', '15%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['-8%', '18%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['20%', '-20%']);
 
   return (
     <section
@@ -17,56 +18,62 @@ export function NamibiaSection() {
       ref={ref}
       className="relative z-10 overflow-hidden bg-paper"
     >
-      <div className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left: image with parallax */}
-          <div className="relative lg:col-span-6">
-            <div className="relative aspect-[4/5] w-full overflow-hidden lg:aspect-[4/5]">
-              <motion.div style={{ y }} className="absolute inset-0 h-[130%]">
-                <img
-                  src="https://images.pexels.com/photos/39260645/pexels-photo-39260645.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Namibian landscape — vast road under dramatic sky"
-                  className="h-full w-full object-cover"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/30 to-transparent" />
-            </div>
-          </div>
+      {/* Full-width parallax image */}
+      <div className="relative h-[80vh] w-full overflow-hidden lg:h-screen">
+        <motion.div style={{ y }} className="absolute inset-0 h-[130%]">
+          <img
+            src="https://images.pexels.com/photos/39260645/pexels-photo-39260645.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Namibian landscape — vast road under dramatic sky in Hardap Region"
+            className="h-full w-full object-cover"
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-ink-900/10 to-ink-900/30" />
 
-          {/* Right: content */}
-          <div className="flex flex-col justify-center lg:col-span-6">
+        {/* Overlay text */}
+        <motion.div
+          style={{ y: textY }}
+          className="absolute inset-0 flex flex-col justify-end px-6 pb-12 lg:px-10 lg:pb-20"
+        >
+          <Reveal>
+            <span className="font-mono text-[11px] tracking-wide3 uppercase text-white/60">
+              / 07 — Engineered in Namibia
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-6 max-w-4xl font-display text-[clamp(3rem,9vw,8rem)] font-medium leading-[0.85] tracking-ultra-tight text-white">
+              Engineered
+              <br />
+              in Namibia.
+            </h2>
+          </Reveal>
+        </motion.div>
+      </div>
+
+      {/* Content below image */}
+      <div className="mx-auto max-w-[1600px] px-6 py-20 lg:px-10 lg:py-28">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-4 lg:col-start-2">
             <Reveal>
-              <span className="font-mono text-xs tracking-wide3 uppercase text-ink-400">
-                / 07 — Engineered in Namibia
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="mt-6 font-display text-[clamp(2rem,5vw,4.5rem)] font-medium leading-[0.95] tracking-ultra-tight text-ink-900">
-                Engineered
-                <br />
-                in Namibia.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="mt-8 max-w-lg text-lg leading-[1.6] text-ink-600">
+              <p className="text-lg leading-[1.6] text-ink-600">
                 Syntex understands the environments in which Namibian
                 organisations operate. We engineer systems around real
                 operational requirements — from Windhoek to the most remote
                 industrial sites.
               </p>
             </Reveal>
-            <Reveal delay={0.3}>
-              <p className="mt-6 max-w-lg text-lg leading-[1.6] text-ink-600">
-                Our solutions are built to perform in African conditions, backed
-                by local support and a commitment to the social development of
-                the communities in which we operate.
+          </div>
+          <div className="lg:col-span-4 lg:col-start-7">
+            <Reveal delay={0.15}>
+              <p className="text-lg leading-[1.6] text-ink-600">
+                Our solutions are built to perform in African conditions,
+                backed by local support and a commitment to the social
+                development of the communities in which we operate.
               </p>
             </Reveal>
-
-            <Reveal delay={0.4}>
-              <div className="mt-12 flex items-center gap-6">
+            <Reveal delay={0.25}>
+              <div className="mt-10 flex items-center gap-6">
                 <div className="h-px flex-1 bg-line" />
-                <span className="font-mono text-xs tracking-wide3 uppercase text-ink-400">
+                <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-400">
                   Windhoek — Est. 2008
                 </span>
               </div>

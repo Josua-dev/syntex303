@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="min-h-screen bg-paper">
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Introduction />
         <Solutions />
