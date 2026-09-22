@@ -4,8 +4,27 @@ import { ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="relative z-10 bg-ink-950 text-ink-400">
-      <div className="mx-auto max-w-[1600px] px-6 py-14 lg:px-10 lg:py-16">
+    <footer className="relative z-10 overflow-hidden bg-ink-950 text-ink-400">
+      {/* Background marquee layer */}
+      <div
+        className="pointer-events-none absolute inset-0 flex items-center"
+        aria-hidden="true"
+      >
+        <div className="flex w-max animate-footer-marquee items-center whitespace-nowrap">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span
+              key={i}
+              className="font-display font-medium tracking-tight text-ink-800 text-[60px] sm:text-[90px] lg:text-[130px] xl:text-[150px] leading-none select-none"
+            >
+              SYNTECHNOLOGIES
+              <span className="mx-8 inline-block w-4" />
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Existing footer content */}
+      <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-14 lg:px-10 lg:py-16">
         {/* Top: logo + nav */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Logo */}

@@ -41,6 +41,7 @@ export default {
       animation: {
         'marquee-left': 'marquee-left 50s linear infinite',
         'marquee-right': 'marquee-right 50s linear infinite',
+        'footer-marquee': 'footer-marquee 35s linear infinite',
         'fade-in': 'fade-in 0.6s ease-out forwards',
         'scroll-indicator': 'scroll-indicator 2s ease-in-out infinite',
       },
@@ -61,6 +62,10 @@ export default {
           '0%': { transform: 'translateY(0)', opacity: '1' },
           '50%': { transform: 'translateY(8px)', opacity: '0.5' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'footer-marquee': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },
