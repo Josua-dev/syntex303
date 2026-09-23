@@ -1,3 +1,3 @@
 # syntex303
 
-[![Open in Bolt](https://bolt.new/static/open-in-bolt.svg)](https://bolt.new/~/sb1-mexsxi2n)
+Syntex Technologies — Namibian ICT systems integrator. Security, enterprise and utility systems. Engineered in Windhoek since 2008.
