@@ -16,7 +16,7 @@ export function Footer() {
               key={i}
               className="font-display font-medium tracking-tight text-ink-800 text-[60px] sm:text-[90px] lg:text-[130px] xl:text-[150px] leading-none select-none"
             >
-              SYNTEx TECHNOLOGIES (PTY) LTD
+              SYNTEX TECHNOLOGIES (PTY) LTD
               <span className="mx-8 inline-block w-6" />
             </span>
           ))}
