@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { projects } from '@/data/content';
-import { Reveal } from './Reveal';
+import { Reveal, Stagger, StaggerItem } from './Reveal';
 
 export function ProjectShowcase() {
   return (
@@ -31,14 +30,11 @@ export function ProjectShowcase() {
         </div>
 
         {/* Projects grid */}
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:mt-20 lg:grid-cols-12 lg:gap-8">
-          {projects.map((project, i) => (
-            <motion.div
+        <Stagger className="mt-16 grid grid-cols-1 gap-8 lg:mt-20 lg:grid-cols-12 lg:gap-8" stagger={0.12}>
+          {projects.map((project) => (
+            <StaggerItem
               key={project.number}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              y={60}
               className={`col-span-1 ${project.span}`}
             >
               <a href="#contact" className="group block">
@@ -84,9 +80,9 @@ export function ProjectShowcase() {
                   </div>
                 </div>
               </a>
-            </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

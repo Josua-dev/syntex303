@@ -1,16 +1,20 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { useRef } from 'react';
 import { Reveal } from './Reveal';
 
 export function NamibiaSection() {
   const ref = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['-8%', '18%']);
-  const textY = useTransform(scrollYProgress, [0, 1], ['20%', '-20%']);
+  const yRaw = useTransform(scrollYProgress, [0, 1], ['-8%', '18%']);
+  const textYRaw = useTransform(scrollYProgress, [0, 1], ['20%', '-20%']);
+
+  const y: MotionValue<string> | undefined = reduced ? undefined : yRaw;
+  const textY: MotionValue<string> | undefined = reduced ? undefined : textYRaw;
 
   return (
     <section

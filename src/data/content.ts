@@ -173,6 +173,15 @@ export const partnerLogos = [
   { name: 'Veeam', src: '/partners/VEEAM.png', url: 'https://www.veeam.com' },
   { name: 'Microsoft', src: '/partners/Microsoft.png', url: 'https://www.microsoft.com' },
   { name: 'Oracle Advanced', src: '/partners/Oracle_Advanced.png', url: 'https://www.oracle.com' },
+  { name: 'Regula', src: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Regula_logo.png', url: 'https://regulaforensics.com' },
+  { name: 'Thales', src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Thales_Logo.svg', url: 'https://www.thalesgroup.com' },
+  { name: 'SITA', src: 'https://upload.wikimedia.org/wikipedia/commons/1/16/SITA_logo.svg', url: 'https://www.sita.aero' },
+  { name: 'Freshmark Systems', src: 'https://www.freshmarksystems.co.za/favicon.ico', url: 'https://www.freshmarksystems.co.za' },
+  { name: 'Huawei', src: 'https://cdn.simpleicons.org/huawei/111111', url: 'https://www.huawei.com' },
+  { name: 'Fortinet', src: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Fortinet_logo.svg', url: 'https://www.fortinet.com' },
+  { name: 'Lenovo', src: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Lenovo-Logo.svg', url: 'https://www.lenovo.com' },
+  { name: 'AnyDesk', src: 'https://upload.wikimedia.org/wikipedia/commons/6/60/AnyDesk-logo.svg', url: 'https://anydesk.com' },
+  { name: 'Exotel', src: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Exotel_Techcom_logo_%282025%29.png', url: 'https://exotel.com' },
 ];
 
 export const industries = [

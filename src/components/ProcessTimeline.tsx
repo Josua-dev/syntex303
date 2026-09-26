@@ -19,23 +19,19 @@ export function ProcessTimeline() {
     >
       <div className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
         {/* Heading */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <Reveal>
-              <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-400">
-                / 04 — Engineering Process
-              </span>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-8">
-            <Reveal delay={0.1}>
-              <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900">
-                From requirement
-                <br />
-                <span className="text-ink-300">to real system.</span>
-              </h2>
-            </Reveal>
-          </div>
+        <div className="flex flex-col items-center gap-8 text-center">
+          <Reveal>
+            <span className="font-mono text-[11px] tracking-wide3 uppercase text-ink-400">
+              / 04 — Engineering Process
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900">
+              From requirement
+              <br />
+              <span className="text-ink-300">to real system.</span>
+            </h2>
+          </Reveal>
         </div>
 
         {/* Timeline */}

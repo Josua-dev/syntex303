@@ -1,18 +1,25 @@
 import { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 export function Hero() {
   const { scrollY } = useScroll();
   const [mounted, setMounted] = useState(false);
+  const reduced = useReducedMotion();
 
   useEffect(() => setMounted(true), []);
 
-  const heroScale = useTransform(scrollY, [0, 600], [1, 1.08]);
-  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0.3]);
-  const heroTextY = useTransform(scrollY, [0, 500], [0, -60]);
-  const imageY = useTransform(scrollY, [0, 700], [0, 80]);
-  const metadataY = useTransform(scrollY, [0, 300], [0, -30]);
+  const heroScaleRaw = useTransform(scrollY, [0, 600], [1, 1.08]);
+  const heroOpacityRaw = useTransform(scrollY, [0, 400], [1, 0.3]);
+  const heroTextYRaw = useTransform(scrollY, [0, 500], [0, -60]);
+  const imageYRaw = useTransform(scrollY, [0, 700], [0, 80]);
+  const metadataYRaw = useTransform(scrollY, [0, 300], [0, -30]);
+
+  const heroScale: MotionValue<number> | undefined = reduced ? undefined : heroScaleRaw;
+  const heroOpacity: MotionValue<number> | undefined = reduced ? undefined : heroOpacityRaw;
+  const heroTextY: MotionValue<number> | undefined = reduced ? undefined : heroTextYRaw;
+  const imageY: MotionValue<number> | undefined = reduced ? undefined : imageYRaw;
+  const metadataY: MotionValue<number> | undefined = reduced ? undefined : metadataYRaw;
 
   const lines = ['ENGINEERING', 'THE SYSTEMS', 'THAT KEEP', 'BUSINESS MOVING.'];
 
@@ -49,8 +56,8 @@ export function Hero() {
               {lines.map((line, i) => (
                 <div key={i} className="overflow-hidden">
                   <motion.h1
-                    initial={{ y: '110%' }}
-                    animate={mounted ? { y: 0 } : { y: '110%' }}
+                    initial={reduced ? false : { y: '110%' }}
+                    animate={mounted || reduced ? { y: 0 } : { y: '110%' }}
                     transition={{
                       delay: 0.4 + i * 0.1,
                       duration: 1,

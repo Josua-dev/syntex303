@@ -37,24 +37,27 @@ export function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-paper/95 backdrop-blur-md border-b border-line'
-            : 'bg-transparent'
-        }`}
-        style={{ height: scrolled ? 60 : 80 }}
-      >
-        <div className="mx-auto flex h-full max-w-[1600px] items-center justify-between px-6 lg:px-10">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 lg:px-6 lg:pt-5">
+        <div
+          className={`mx-auto flex max-w-[1600px] items-center justify-between rounded-2xl border px-5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-8 ${
+            scrolled
+              ? 'border-white/60 bg-white/70 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl backdrop-saturate-150'
+              : 'border-white/40 bg-white/40 backdrop-blur-lg backdrop-saturate-150'
+          }`}
+          style={{ height: scrolled ? 60 : 72 }}
+        >
           <a
             href="#top"
-            className="flex items-center"
+            className="flex items-center gap-3"
             aria-label="Syntex Technologies home"
           >
             <SyntexLogo
               variant="dark"
-              className={`transition-all duration-500 ${scrolled ? 'h-8' : 'h-10'}`}
+              className={`w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'}`}
             />
+            <span className="hidden font-display text-lg font-medium tracking-wide2 uppercase text-ink-900 sm:block">
+              Syntex Technologies
+            </span>
           </a>
 
           <nav className="hidden items-center gap-7 lg:flex">
@@ -103,7 +106,7 @@ export function Navbar() {
           >
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between px-6 py-5">
-                <SyntexLogo variant="light" className="h-8" />
+                <SyntexLogo variant="light" className="h-10 w-auto" />
                 <button
                   onClick={() => setMenuOpen(false)}
                   className="text-white"

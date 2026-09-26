@@ -38,7 +38,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="lg:col-span-3">
-            <p className="font-mono text-[11px] tracking-wide2 uppercase text-ink-600">
+            <p className="font-mono text-[11px] font-bold tracking-wide2 uppercase text-ink-300">
               Navigate
             </p>
             <ul className="mt-5 flex flex-col gap-2.5">
@@ -65,7 +65,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <p className="font-mono text-[11px] tracking-wide2 uppercase text-ink-600">
+            <p className="font-mono text-[11px] font-bold tracking-wide2 uppercase text-ink-300">
               Contact
             </p>
             <ul className="mt-5 flex flex-col gap-3 text-sm">
@@ -101,7 +101,7 @@ export function Footer() {
 
           {/* Location */}
           <div className="lg:col-span-2">
-            <p className="font-mono text-[11px] tracking-wide2 uppercase text-ink-600">
+            <p className="font-mono text-[11px] font-bold tracking-wide2 uppercase text-ink-300">
               Location
             </p>
             <p className="mt-5 text-sm text-ink-400">
