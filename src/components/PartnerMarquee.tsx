@@ -1,5 +1,6 @@
 import { partnerLogos } from '@/data/content';
 import { Reveal } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 import { LogoCloud } from '@/components/ui/logo-cloud-3';
 
 export function PartnerMarquee() {
@@ -21,15 +22,25 @@ export function PartnerMarquee() {
               / 05 — Technology Partners
             </span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900">
-              Backed by
-              <br />
-              <span className="text-ink-300">the technology</span>
-              <br />
-              behind the world.
-            </h2>
-          </Reveal>
+          <div>
+            <AnimatedText
+              as="h2"
+              text="Backed by"
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900"
+            />
+            <AnimatedText
+              as="h2"
+              text="the technology"
+              delay={0.15}
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-300"
+            />
+            <AnimatedText
+              as="h2"
+              text="behind the world."
+              delay={0.3}
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900"
+            />
+          </div>
         </div>
       </div>
 

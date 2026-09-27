@@ -1,5 +1,6 @@
 import { integrationLayers } from '@/data/content';
 import { Reveal } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 import Timeline from './ui/timeline-05';
 
 export function IntegrationDiagram() {
@@ -32,15 +33,25 @@ export function IntegrationDiagram() {
                 / 03 — Systems Integration
               </span>
             </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="mt-6 font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-white">
-                Systems
-                <br />
-                that work
-                <br />
-                <span className="text-ink-500">as one.</span>
-              </h2>
-            </Reveal>
+            <div className="mt-6">
+              <AnimatedText
+                as="h2"
+                text="Systems"
+                className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-white"
+              />
+              <AnimatedText
+                as="h2"
+                text="that work"
+                delay={0.15}
+                className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-white"
+              />
+              <AnimatedText
+                as="h2"
+                text="as one."
+                delay={0.3}
+                className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-500"
+              />
+            </div>
             <Reveal delay={0.2}>
               <p className="mt-10 max-w-md text-lg leading-[1.6] text-ink-400">
                 Syntex does not simply sell technology. We integrate technology

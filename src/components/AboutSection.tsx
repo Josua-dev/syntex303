@@ -1,4 +1,5 @@
 import { Reveal, FadeUp } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 import { Accordion05 } from '@/components/ui/accordion-05';
 import { company } from '@/data/content';
 
@@ -54,11 +55,11 @@ export function AboutSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
-            <h2 className="mt-20 font-display text-[clamp(1.5rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-tight text-ink-900">
-              {company.about}
-            </h2>
-          </Reveal>
+          <AnimatedText
+            as="h2"
+            text={company.about}
+            className="mt-20 text-[clamp(1.5rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-tight text-ink-900"
+          />
           <Reveal delay={0.25}>
             <p className="mt-8 text-lg leading-[1.6] text-ink-600">
               {company.aboutExtended}

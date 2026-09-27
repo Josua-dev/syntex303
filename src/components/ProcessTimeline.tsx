@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { processSteps } from '@/data/content';
 import { Reveal } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 
 export function ProcessTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,13 +26,19 @@ export function ProcessTimeline() {
               / 04 — Engineering Process
             </span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900">
-              From requirement
-              <br />
-              <span className="text-ink-300">to real system.</span>
-            </h2>
-          </Reveal>
+          <div>
+            <AnimatedText
+              as="h2"
+              text="From requirement"
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900"
+            />
+            <AnimatedText
+              as="h2"
+              text="to real system."
+              delay={0.25}
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-300"
+            />
+          </div>
         </div>
 
         {/* Timeline */}

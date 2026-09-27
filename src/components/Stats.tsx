@@ -1,4 +1,5 @@
 import { Reveal } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 import { AnimatedCounter } from './AnimatedCounter';
 import { DraggableTrack } from './DraggableTrack';
 
@@ -20,13 +21,19 @@ export function Stats() {
               / 09 — Proof
             </span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-900">
-              Built on evidence,
-              <br />
-              <span className="text-ink-300">not promises.</span>
-            </h2>
-          </Reveal>
+          <div>
+            <AnimatedText
+              as="h2"
+              text="Built on evidence,"
+              className="text-[clamp(2rem,4vw,3.5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-900"
+            />
+            <AnimatedText
+              as="h2"
+              text="not promises."
+              delay={0.25}
+              className="text-[clamp(2rem,4vw,3.5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-300"
+            />
+          </div>
         </div>
       </div>
 

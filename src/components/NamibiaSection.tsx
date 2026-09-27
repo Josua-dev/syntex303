@@ -1,6 +1,7 @@
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { useRef } from 'react';
 import { Reveal } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 
 export function NamibiaSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -43,13 +44,19 @@ export function NamibiaSection() {
               / 07 — Engineered in Namibia
             </span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="mt-6 max-w-4xl font-display text-[clamp(3rem,9vw,8rem)] font-medium leading-[0.85] tracking-ultra-tight text-white">
-              Engineered
-              <br />
-              in Namibia.
-            </h2>
-          </Reveal>
+          <div className="mt-6">
+            <AnimatedText
+              as="h2"
+              text="Engineered"
+              className="max-w-4xl text-[clamp(3rem,9vw,8rem)] font-medium leading-[0.85] tracking-ultra-tight text-white"
+            />
+            <AnimatedText
+              as="h2"
+              text="in Namibia."
+              delay={0.2}
+              className="max-w-4xl text-[clamp(3rem,9vw,8rem)] font-medium leading-[0.85] tracking-ultra-tight text-white"
+            />
+          </div>
         </motion.div>
       </div>
 

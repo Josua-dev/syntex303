@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motio
 import { ArrowUpRight } from 'lucide-react';
 import { solutions } from '@/data/content';
 import { Reveal, Stagger, StaggerItem } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 
 export function Solutions() {
   const [active, setActive] = useState(0);
@@ -32,13 +33,19 @@ export function Solutions() {
               / 02 — Solutions
             </span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.95] tracking-ultra-tight text-ink-900">
-              Eight capability
-              <br />
-              <span className="text-ink-300">areas. One system.</span>
-            </h2>
-          </Reveal>
+          <div>
+            <AnimatedText
+              as="h2"
+              text="Eight capability"
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.95] tracking-ultra-tight text-ink-900"
+            />
+            <AnimatedText
+              as="h2"
+              text="areas. One system."
+              delay={0.25}
+              className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.95] tracking-ultra-tight text-ink-300"
+            />
+          </div>
         </div>
 
         {/* Interactive rows */}

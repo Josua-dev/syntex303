@@ -1,4 +1,5 @@
-import { Reveal, StaggerText, FadeUp } from './Reveal';
+import { Reveal, FadeUp } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 import { ArrowUpRight } from 'lucide-react';
 import { ContactMap } from './ContactMap';
 import { RibbonGlow } from './RibbonGlow';
@@ -22,13 +23,19 @@ export function CTA() {
               </span>
             </Reveal>
 
-            <StaggerText>
-              <h2 className="font-display text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.88] tracking-ultra-tight text-white">
-                Let's engineer
-                <br />
-                <span className="text-ink-500">what's next.</span>
-              </h2>
-            </StaggerText>
+            <div>
+              <AnimatedText
+                as="h2"
+                text="Let's engineer"
+                className="text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.88] tracking-ultra-tight text-white"
+              />
+              <AnimatedText
+                as="h2"
+                text="what's next."
+                delay={0.25}
+                className="text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.88] tracking-ultra-tight text-ink-500"
+              />
+            </div>
 
             <Reveal delay={0.2}>
               <p className="max-w-xl text-lg leading-[1.6] text-ink-400">

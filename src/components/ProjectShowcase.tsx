@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { projects } from '@/data/content';
 import { Reveal, Stagger, StaggerItem } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 
 export function ProjectShowcase() {
   return (
@@ -19,13 +20,19 @@ export function ProjectShowcase() {
             </Reveal>
           </div>
           <div className="lg:col-span-8">
-            <Reveal delay={0.1}>
-              <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900">
-                Selected project
-                <br />
-                <span className="text-ink-300">implementations.</span>
-              </h2>
-            </Reveal>
+            <div>
+              <AnimatedText
+                as="h2"
+                text="Selected project"
+                className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-900"
+              />
+              <AnimatedText
+                as="h2"
+                text="implementations."
+                delay={0.25}
+                className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.92] tracking-ultra-tight text-ink-300"
+              />
+            </div>
           </div>
         </div>
 
