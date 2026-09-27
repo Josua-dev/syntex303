@@ -1,4 +1,5 @@
-import { Reveal, StaggerText } from './Reveal';
+import { Reveal } from './Reveal';
+import { AnimatedText } from './AnimatedText';
 
 export function Introduction() {
   return (
@@ -15,20 +16,17 @@ export function Introduction() {
           </Reveal>
 
           <div className="flex flex-col items-center">
-            <StaggerText>
-              <h2 className="font-display text-[clamp(2rem,5.5vw,5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-900">
-                We do not supply
-                <br />
-                technology.
-              </h2>
-            </StaggerText>
-            <StaggerText delay={0.15}>
-              <h2 className="mt-2 font-display text-[clamp(2rem,5.5vw,5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-300">
-                We engineer
-                <br />
-                working systems.
-              </h2>
-            </StaggerText>
+            <AnimatedText
+              as="h2"
+              text="We do not supply technology."
+              className="text-[clamp(2rem,5.5vw,5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-900"
+            />
+            <AnimatedText
+              as="h2"
+              text="We engineer working systems."
+              delay={0.35}
+              className="mt-2 text-[clamp(2rem,5.5vw,5rem)] font-medium leading-[1.0] tracking-ultra-tight text-ink-300"
+            />
 
             <div className="mt-16 grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:max-w-3xl">
               <Reveal delay={0.2}>

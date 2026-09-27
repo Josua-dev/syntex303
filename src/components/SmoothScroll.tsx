@@ -41,7 +41,12 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
       const el = document.querySelector(id);
       if (!el) return;
       e.preventDefault();
-      lenis.scrollTo(el as HTMLElement, { offset: -60 });
+      // "#top" means the very top of the page — no navbar offset needed
+      if (id === '#top') {
+        lenis.scrollTo(0);
+      } else {
+        lenis.scrollTo(el as HTMLElement, { offset: -60 });
+      }
     };
     document.addEventListener('click', onClick);
 

@@ -48,14 +48,14 @@ export function Navbar() {
         >
           <a
             href="#top"
-            className="flex items-center gap-3"
+            className="group flex cursor-pointer items-center gap-3"
             aria-label="Syntex Technologies home"
           >
             <SyntexLogo
               variant="dark"
               className={`w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'}`}
             />
-            <span className="hidden font-display text-lg font-medium tracking-wide2 uppercase text-ink-900 sm:block">
+            <span className="hidden font-display text-lg font-medium tracking-wide2 uppercase text-ink-900 transition-colors duration-300 group-hover:text-ink-500 sm:block">
               Syntex Technologies
             </span>
           </a>
